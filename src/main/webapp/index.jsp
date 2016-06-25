@@ -18,9 +18,12 @@
 nick_name=${item.nickName }
 ,telephone=${item.telephone } 
 ,register_time=${item.registerTime }
+
+
+
 <form action="../user/showInfo.htmls" method="post">
 			<input type="hidden" name="id" value="${item.id}" /> <input
-				type="submit" value="查询全部权限" />
+				type="submit" value="查询全部信息" />
 		</form>
 		<br />
 	</c:forEach>

@@ -14,8 +14,6 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private UserDao userDao;
-	@Autowired
-	private UserDao authorityDao;
 
 	public AcctUser get(String id){
 		return userDao.get(id);
@@ -30,8 +28,8 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	public AcctUser power(String id){
-		String hql =" from AcctUser as user inner join user.acctRoles as role"
-				+ " where  is no user.id='"+id+"'";
+		String hql ="select user from AcctUser user inner join user.acctRoles"
+				+ " where user.id='"+id+"'";
 		AcctUser user=userDao.hqlQuery(hql);
 		return user;
 	}

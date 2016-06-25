@@ -8,7 +8,7 @@
   	<!-- 定位用于contextLoaderListener获取applicationContext.xml的物理位置 ： Load by Spring ContextLoaderListener -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:*/spring.xml,classpath:*/spring-hibernate.xml</param-value>
+		<param-value>classpath:config/spring.xml,classpath:config/spring-hibernate.xml</param-value>
 	</context-param>
 	
 	<filter>
@@ -55,7 +55,7 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<!-- 此处配置的是SpringMVC的配置文件 -->
-			<param-value>classpath:*/spring-mvc.xml</param-value>
+			<param-value>classpath:config/spring-mvc.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -74,4 +74,8 @@
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
+	
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>
